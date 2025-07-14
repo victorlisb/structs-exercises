@@ -2,19 +2,29 @@
 
 #define MAX_ALUNOS 2
 
+void recebe_dados();
+void imprime_resultado();
+
+typedef struct {
+
+    char nome[15];
+    float n1,n2,n3;
+    float media;
+
+}aluno;
+aluno alunos[MAX_ALUNOS];
+
 int main(){
 
-    typedef struct {
+    recebe_dados();
+    imprime_resultado();
 
-        char nome[15];
-        float n1,n2,n3;
-        float media;
+   return 0;
+}
 
-    }aluno;
+void recebe_dados(){
 
-    aluno alunos[MAX_ALUNOS];
-
-  for(int i = 0; i < MAX_ALUNOS; i++){
+    for(int i = 0; i < MAX_ALUNOS; i++){
 
     printf("Digite o nome do aluno: ");
     scanf("%s",alunos[i].nome);
@@ -34,7 +44,11 @@ int main(){
 
    }
 
-   for(int i = 0; i < MAX_ALUNOS; i++){
+}
+
+void imprime_resultado(){
+
+    for(int i = 0; i < MAX_ALUNOS; i++){
 
     if(alunos[i].media >= 7){
 
@@ -45,6 +59,4 @@ int main(){
     }
 
    }
-
-   return 0;
 }
